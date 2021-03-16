@@ -163,7 +163,7 @@ population_estimate_2018 > 20000000
       in 2010.
 */
 
--- your query here
+
 
 ---- Phase 4: Use a JOIN operation ---------------------------------------------
 -- Retrieve rows from multiple tables joining on a foreign key.
@@ -178,7 +178,8 @@ population_estimate_2018 > 20000000
      airport names and city names only.
 */
 
--- your query here
+SELECT city, name FROM cities
+INNER JOIN airports ON (cities.id = airports.city_id);
 
 \echo ========= Problem 4.2 ====================================================
 \echo
@@ -190,7 +191,10 @@ population_estimate_2018 > 20000000
       rows.)
 */
 
--- your query here
+
+SELECT COUNT(name) FROM cities
+INNER JOIN airports ON (cities.id = airports.city_id)
+WHERE city = 'New York';
 
 --------------------------------------------------------------------------------
 ---- Bonuses:
