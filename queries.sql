@@ -136,7 +136,9 @@ WHERE city LIKE 'S%';
      population in 2018.
 */
 
-
+SELECT city from cities
+WHERE land_area_sq_mi_2016 > 400
+OR population_estimate_2018 > 2000000;
 
 \echo ========= Problem 3.9 ====================================================
 \echo
@@ -147,7 +149,10 @@ WHERE city LIKE 'S%';
      name, the land area, and the estimated population in 2018.
 */
 
--- your query here
+SELECT city FROM cities
+WHERE land_area_sq_mi_2016 > 400
+<>
+population_estimate_2018 > 20000000 
 
 \echo ========= Problem 3.10 ===================================================
 \echo
