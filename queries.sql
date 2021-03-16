@@ -66,7 +66,9 @@ WHERE city = 'San Diego';
       Phoenix, Jacksonville, Charlotte, Nashville.
 */
 
- -- your query here
+
+SELECT city, state, population_estimate_2018 FROM cities
+WHERE city IN ('Phoenix', 'Jacksonville', 'Charlotte', 'Nashville');
 
 \echo ========= Problem 3.3 ====================================================
 \echo
@@ -86,7 +88,9 @@ WHERE city = 'San Diego';
      1,000,000 people).
 */
 
--- your query here
+
+SELECT city FROM cities
+WHERE population_estimate_2018 > 1000000;
 
 \echo ========= Problem 3.5 ====================================================
 \echo
@@ -96,20 +100,20 @@ WHERE city = 'San Diego';
      uses a WHERE clause to return only the cities in Texas.
 */
 
--- your query here
+SELECT city, population_estimate_2018 / 100000 FROM cities
+WHERE state = 'Texas';
 
 \echo ========= Problem 3.6 ====================================================
 \echo
 /*
-3.6) Write a SQL query to get the city and estimated population in 2018 in
-     number of millions (i.e. without zeroes at the end: 1 million), and that
-     uses a WHERE clause to return only the cities in Texas. Write a SQL query
+3.6) Write a SQL query
      that uses a WHERE clause to get the city, state, and estimated population
      in 2018 of cities that are NOT in the following states:
      New York, California, Texas.
 */
 
--- your query here
+SELECT city, population_estimate_2018 / 10000 FROM cities
+WHERE state NOT IN ('New York', 'California', 'Texas');
 
 \echo ========= Problem 3.7 ====================================================
 \echo
@@ -120,7 +124,8 @@ WHERE city = 'San Diego';
      (Note: See the PostgreSQL doc on Pattern Matching for more information.)
 */
 
--- your query here
+SELECT city, state, population_estimate_2018 FROM cities 
+WHERE city LIKE 'S%';
 
 \echo ========= Problem 3.8 ====================================================
 \echo
@@ -131,7 +136,7 @@ WHERE city = 'San Diego';
      population in 2018.
 */
 
--- your query here
+
 
 \echo ========= Problem 3.9 ====================================================
 \echo
